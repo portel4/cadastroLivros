@@ -1,0 +1,22 @@
+<h2>Cadastro Livros</h2>
+
+<mat-card>
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput placeholder="Ex. 2010" [(ngModel)]="id">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Título</mat-label>
+    <input matInput placeholder="Ex. O Pequeno Príncipe" [(ngModel)]="titulo" >
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Autor</mat-label>
+    <input matInput placeholder="Ex. Antoine de Saint-Exupéry" [(ngModel)]="autor" >
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Número de páginas</mat-label>
+    <input matInput placeholder="Ex. 256" [(ngModel)]="paginas" >
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onAdicionarLivro()">Cadastrar livro</button>
+</mat-card>
+
