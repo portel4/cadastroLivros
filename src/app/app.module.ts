@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {LivroService} from './livros/livros.service';
 
 /**Imports do Angular Material */
 import {MatInputModule} from '@angular/material/input';
@@ -32,7 +33,7 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
     MatToolbarModule,
     MatExpansionModule
   ],
-  providers: [],
+  providers: [LivroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

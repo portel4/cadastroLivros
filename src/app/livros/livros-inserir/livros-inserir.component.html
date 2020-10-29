@@ -1,22 +1,33 @@
 <h2>Cadastro Livros</h2>
 
 <mat-card>
-  <mat-form-field>
-    <mat-label>ID</mat-label>
-    <input matInput placeholder="Ex. 2010" [(ngModel)]="id">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Título</mat-label>
-    <input matInput placeholder="Ex. O Pequeno Príncipe" [(ngModel)]="titulo" >
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Autor</mat-label>
-    <input matInput placeholder="Ex. Antoine de Saint-Exupéry" [(ngModel)]="autor" >
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Número de páginas</mat-label>
-    <input matInput placeholder="Ex. 256" [(ngModel)]="paginas" >
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onAdicionarLivro()">Cadastrar livro</button>
+  <form (submit)="onAdicionarLivro(livroForm)" #livroForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Código" name="id" ngModel required minlength="1" type="number" #id="ngModel">
+      <mat-error *ngIf="id.invalid">Digite um id válido</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput placeholder="Título" name="titulo" ngModel required minlength="2" type="text" #titulo="ngModel">
+      <mat-error *ngIf="titulo.invalid">Digite um título válido</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput placeholder="Autor" name="autor" ngModel required min="3" type="text" #autor="ngModel">
+      <mat-error *ngIf="autor.invalid">Digite um autor válido</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+
+      <input matInput placeholder="Nº de páginas" name="paginas" ngModel required minlength="2" type="number" #paginas="ngModel">
+      <mat-error *ngIf="paginas.invalid">Digite um Nº de páginas válido</mat-error>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary">Cadastrar livro</button>
+  </form>
 </mat-card>
 
